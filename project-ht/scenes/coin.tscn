@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvt3at3ao8at1"]
+
+[ext_resource type="Texture2D" uid="uid://cioldvgu4qh68" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="1_3vpp6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03uu1"]
+atlas = ExtResource("1_3vpp6")
+region = Rect2(240, 336, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jy0p7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03uu1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eq002"]
+radius = 3.0
+
+[node name="Coin" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jy0p7")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_eq002")
